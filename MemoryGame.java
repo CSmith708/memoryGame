@@ -29,7 +29,7 @@ public class MemoryGame extends JFrame {
 
     public MemoryGame() {
         setTitle("Picture Memory Game");
-        setSize(400, 400);
+        setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         imagePaths = new ArrayList<>();
@@ -84,6 +84,7 @@ public class MemoryGame extends JFrame {
     add(cardPannel);
     }
 
+
     private void handleCardClick(int index) {
         if (cardButtons[index].getIcon() == null) {
             return;
@@ -109,8 +110,8 @@ public class MemoryGame extends JFrame {
 
                     if (numberOfMatches == imagePaths.size() / 2) {
                         JOptionPane.showMessageDialog(null, "Congratualtions, You Finished The Game!!!");
-                        completionStatus = true;
                         System.exit(0);
+
                     }
                 } else {
                     cardButtons[firstCardIndex].setIcon(new ImageIcon("presidents/potusSeal.png"));
@@ -123,14 +124,14 @@ public class MemoryGame extends JFrame {
             timer.restart();
     }
 
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                        new MemoryGame().setVisible(true);
-                    }
+                new MemoryGame().setVisible(true);
+            }
         });
-
-        }
-
     }
+
+}
